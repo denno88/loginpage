@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <a href="landing.html"></a>
+    <link rel="html" href="landing.html">
+    <link rel="script" href="script.js">
+</head>
+<body>
+    <div class="wrapper">
+        <form id="login-form" action="index.php" method="post">
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="text" placeholder="Username" name="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="password" placeholder="Password" name="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Remember me 
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+            </div>
+        </form>
+
+        <form id="register-form" action="connect.php"method ="post" style="display: none;">
+            <h1>Registration form</h1>
+            <div class="inputbox">
+                <input type="text" placeholder="Full_Name" name="Full_Name" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="text" placeholder="Username" name="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="email" placeholder="Email" name="Email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="tel" placeholder="Phone_Number" name="Phone_Number" required>
+                <i class='bx bxs-phone'></i>
+            </div>
+
+            <div class="inputbox">
+                <select name="Gender">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <i class='bx bx-user-circle'></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="password" placeholder="Password" name="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+
+            <div class="login-link">
+                <p class="lable">Already have an account? <a href="#" id="login-link">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("register-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        });
+
+        document.getElementById("login-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        });
+    </script>
+    
+   <script src="script.js"></script>
+   
+
+        
+   
+</body>
+</html>
